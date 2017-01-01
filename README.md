@@ -78,11 +78,13 @@ comment last tag:
 example
 -------
 parse what's in **haiti.c**:
+
 ```
 ./haiti haiti.c
 ```
 
 parse what's in current directory
+
 ```
 ./haiti .
 ```
@@ -115,6 +117,7 @@ create a comment like:
 // #? [label] creates new issue with label 'label'
 
 ```
+
 run:
 
 ```sh

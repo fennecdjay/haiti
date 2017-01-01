@@ -208,7 +208,7 @@ static void parse_file(File f)
     line++;
     if(!base || (strlen(base) < strlen(str) + 4))
       continue;
-    offset = strlen(str) + 1;
+    offset = strlen(str) ? strlen(str) + 1 : 0;
     l.ghis = grab_ghis(base, &offset);
     l.note = grab_note(base, &offset);
     l.type = grab_type(base, &offset);

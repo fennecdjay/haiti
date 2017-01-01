@@ -1,12 +1,21 @@
-#Haiti  
+Haiti
+=====
+
+******
 stands for  
-####Help Annotation and Issue Tracking Inline
+
+Help Annotation and Issue Tracking Inline
+******
+
 inspired by [watson](http://goosecode.com/watson/) (but does not handle github issues, at least for now).
 
-##configure
+
+configure
+---------
 edit config.mk to your liking
 
-##build
+build
+-----
 in the source directory  
 
 ```
@@ -19,11 +28,13 @@ of course, you can also
 make clean
 ```
 
-##hacking
+hacking
+-------
   * add types: look in filetype.h
   * ...  
 
-##install
+install
+-------
 not ready yet.  
 but it will be something like
   
@@ -31,7 +42,8 @@ but it will be something like
 make install
 ```
 
-##usage
+usage
+-----
 *Haiti* detects special comments in your source code. 
 
 create a [tagged] comment:
@@ -59,7 +71,8 @@ comment last tag:
 // | also this one
 // || this one comments the last comment
 ```
-## example
+example
+-------
 parse what's in **haiti.c**:
 ```
 ./haiti haiti.c
@@ -83,15 +96,15 @@ or
 ```	
 
 
-###TODO
+### TODO
 adds screenshots or similar.
 with *what?*  
 
 
 
 
-### Handling issues
-
+Handling issues
+---------------
 create a comment like:
 ```
 // #? [label] creates new issue with label 'label'
@@ -113,7 +126,8 @@ you can then close it with:
 ```
 
 
-##Issues  
+Issues  
+------
 [here](https://github.com/fennecdjay/haiti/issues) please.
 
 that about all.

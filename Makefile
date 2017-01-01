@@ -2,6 +2,7 @@
 USE_GITHUB ?= 1
 # compile for github or not
 DEBUG ?==1
+PREFIX?=/usr
 # pedantic, -g and other flags
 #define USE_GITHUB
 #endef
@@ -30,6 +31,9 @@ ${PROG}: ${OBJ}
 	${CC} ${LDFLAGS} -o ${PROG} ${OBJ}
 	strip ${PROG}
 	rm *.o
+
+install:
+	install ${PROG} ${PREFIX}/bin
 
 clean:
 	rm -f *.o vgcore.* haiti

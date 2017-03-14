@@ -1,5 +1,3 @@
-script:
-  - make
-
 make:
-  - make
+  script:
+    - make

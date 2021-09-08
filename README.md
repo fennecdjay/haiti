@@ -9,6 +9,7 @@ Help Annotation and Issue Tracking Inline
 
 inspired by [watson](http://goosecode.com/watson/) (but does not handle github issues, at least for now).
 
+![screenshot](screenshot.png)
 
 configure
 ---------
@@ -100,10 +101,6 @@ or
 ```
 ./haiti SHOWME haiti.c
 ```	
-
-
-![screenshot](screenshot.png)
-adds screenshots or similar.
 
 
 Handling issues

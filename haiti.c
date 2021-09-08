@@ -25,6 +25,7 @@ pstr tags = NULL;
 static bool sync   = 0;
 static bool by_tag = 0;
 
+// [string] find a string inside another
 bool find(cstr str, pstr src, uint size)
 {
   uint i;
@@ -36,6 +37,7 @@ bool find(cstr str, pstr src, uint size)
   return 0;
 }
 
+// [string] get file extension
 const cstr file_ext(cstr s)
 {
   uint i;
@@ -50,6 +52,7 @@ const cstr file_ext(cstr s)
   return NULL;
 }
 
+// [string] append to a string array
 static pstr append_cstr(pstr array, cstr str, uint* i)
 {
   if(!array) {
@@ -63,6 +66,7 @@ static pstr append_cstr(pstr array, cstr str, uint* i)
   return array;
 }
 
+// [string] concatenate two strings arrays
 static pstr append_pstr(pstr dest, pstr src, uint* dest_size, uint src_size)
 {
   uint i, size;
@@ -74,6 +78,7 @@ static pstr append_pstr(pstr dest, pstr src, uint* dest_size, uint src_size)
   return dest;
 }
 
+// [string] free strings array
 static void free_array(pstr a, uint size)
 {
   uint i;
@@ -84,6 +89,7 @@ static void free_array(pstr a, uint size)
   free(a);
 }
 
+// [string] remove duplicates in a string array
 static pstr remove_dup(pstr src, uint* size)
 {
   uint i, count = 0;
@@ -96,6 +102,7 @@ static pstr remove_dup(pstr src, uint* size)
   return a;
 }
 
+// [string] remove duplicates in a string array
 static pstr list_dir(cstr dirname, uint* n)
 {
   uint i, count = 0;
@@ -106,12 +113,11 @@ static pstr list_dir(cstr dirname, uint* n)
   for(i = 0; i < *n; i++)
   {
     char c[strlen(path) + 1 + strlen(namelist[i]->d_name)];
-    if(!file_ext(namelist[i]->d_name))
-      goto next;
-    memset(c, 0, sizeof(c));
-    strcat(strcat(strcat(c, path), "/"), namelist[i]->d_name);
-    ret = append_cstr(ret, c, &count);
-next:
+    if(file_ext(namelist[i]->d_name)) {
+      memset(c, 0, sizeof(c));
+      strcat(strcat(strcat(c, path), "/"), namelist[i]->d_name);
+      ret = append_cstr(ret, c, &count);
+    }
     free(namelist[i]);
   }
   free(namelist);
@@ -179,6 +185,7 @@ static void haiti_sync()
 #endif
 }
 
+// [haiti] print
 static void haiti_print()
 {
   if(by_tag)
@@ -187,6 +194,7 @@ static void haiti_print()
     haiti_print_file();
 }
 
+// [haiti] clean
 static void haiti_clean()
 {
   free_array(dirs, n_dirs);
@@ -194,6 +202,7 @@ static void haiti_clean()
   free_array(file, n_file);
 }
 
+// [main] this is the main function
 int main(int argc, pstr argv)
 {
   haiti_parse(argc, argv);

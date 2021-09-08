@@ -102,11 +102,8 @@ or
 ```	
 
 
-### TODO
+![screenshot](screenshot.png)
 adds screenshots or similar.
-with *what?*  
-
-
 
 
 Handling issues
